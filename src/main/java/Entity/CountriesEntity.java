@@ -15,7 +15,7 @@ public class CountriesEntity{
 
     @Column(name = "name", nullable = false, length = 45)
     private String name;
-    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<LanguageEntity> languages;
 
     @Column(name = "population", nullable = false)

@@ -35,8 +35,8 @@ public class CountriesService {
     }
 
     public LanguageEntity addLanguageToCountryName(String name, String language) {
-        var countries = countryRepository.getCountriesToAddLanguage(name);
-
+        var countries = countryRepository.getCountriesByName(name);
+        System.out.println(countries);
         if (countries.isEmpty()) {
             throw new CountryNotFoundException();
         }

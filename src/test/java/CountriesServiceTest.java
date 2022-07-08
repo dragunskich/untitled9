@@ -29,7 +29,7 @@ public class CountriesServiceTest {
     }
     @Test
     public void testAddLanguage(){
-        service.addLanguageToCountryName("Cdshile","French");
+        service.addLanguageToCountryName("Greece","French");
 
     }
 }
