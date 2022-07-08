@@ -1,31 +1,36 @@
 import Entity.CountriesEntity;
+
+import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
+
+import Entity.LanguageEntity;
 import org.junit.Test;
 
 public class CountriesServiceTest {
-    CountriesService service = new CountriesService();
+   CountriesService service = new CountriesService();
 
     @Test
     public void testSaveRecord(){
 
         CountriesEntity country = new CountriesEntity();
-        country.setName("asdfg");
-        country.setLanguage("Vcdsdrre");
-        country.setPopulation(14324);
+        country.setName("zxc");
+        country.setPopulation(153);
+
         CountriesEntity countriesEntity = service.add(country);
 
     }
     @Test
     public void testGetAll(){
-        
-        List<CountriesEntity> countries = service.getAll();
-
-        for(CountriesEntity c : countries){
-            System.out.println(c);
+        List<CountryToUser> countries = service.getAll(0);
+        for(CountryToUser c : countries){
+                System.out.println(c);
         }
+
+    }
+    @Test
+    public void testAddLanguage(){
+        service.addLanguageToCountryName("Cdshile","French");
+
     }
 }
 
